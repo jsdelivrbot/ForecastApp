@@ -1,0 +1,26 @@
+<div ng-app="ForecastApp">
+    <div class="wrapper" ng-controller="ForecastController">
+        <!--
+        <div class="title">
+            <p>This App show forecast at the moment. Enter city in placegolder and you'll see</p>
+            <p>&#9660;</p>
+        </div>
+        -->
+        <form ng-submit="submit()">
+            <input type="text" ng-model="text" placeholder="Enter city name"/>
+            <button class="btn_submit" type="submit">Submit</button>
+        </form>
+        <div class="FAP" ng-show="view==true">
+            <div class="FAP__city-name">
+                <h3>{{ weather.name }}</h3>
+                <p>{{ weather.weather[0].description }}</p>
+            </div>
+            <div class="FAP__temp">
+                <h3>{{ weather.main.temp | Cel }}&#8451;</h3>
+            </div>
+            <div class="FAP__pressure">
+                <h3>Pressure: {{ weather.main.pressure }} hPA</h3>
+            </div>
+        </div>
+    </div>
+</div>
